@@ -51,11 +51,11 @@ var download = function(uri, filename, callback){
 
 // get contents_ templates
 
-// for(var i = 1; i <= 9 ;i++){
-//     download('https://assemblyline.in/builder/components/contents_'+ i +'.html', 'builder/components/contents_' +i+'.html', function(){
-//         console.log('done - contents_ '+ i +'.html');
-//     });
-// }
+for(var i = 1; i <= 100 ;i++){
+    download('https://assemblyline.in/builder/components/contents_'+ i +'.html', 'builder/components/contents_' +i+'.html', function(){
+        console.log('done - contents_ '+ i +'.html');
+    });
+}
 
 // get projects_ templates
 
@@ -69,8 +69,24 @@ var download = function(uri, filename, callback){
 //         console.log('done - work '+ i +'.jpg');
 //     });
 // }
-for(var i = 10; i <= 100 ;i++){
-    download('https://assemblyline.in/img/works/'+ i +'.jpg', 'img/works/' +i+'.jpg', function(){
-        console.log('done - work 0'+ i +'.jpg');
+// for(var i = 10; i <= 100 ;i++){
+//     download('https://assemblyline.in/img/works/'+ i +'.jpg', 'img/works/' +i+'.jpg', function(){
+//         console.log('done - work 0'+ i +'.jpg');
+//     });
+// }
+
+// get pricetable_ templates
+
+// for(var i = 1; i <= 200 ;i++){
+//     download('https://assemblyline.in/builder/components/pricetable_'+ i +'.html', 'builder/components/pricetable_' +i+'.html', function(){
+//         console.log('done - pricetable_ '+ i +'.html');
+//     });
+// }
+
+// get navigation_ templates
+
+for(var i = 1; i <= 200 ;i++){
+    download('https://assemblyline.in/builder/components/navigation_'+ i +'.html', 'builder/components/navigation_' +i+'.html', ()=>{
+        console.log('done - navigation_ '+ i +'.html');
     });
 }
