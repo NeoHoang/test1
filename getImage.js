@@ -59,8 +59,13 @@ var download = function(uri, filename, callback){
 
 // get projects_ templates
 
-for(var i = 1; i <= 9 ;i++){
-    download('https://assemblyline.in/builder/components/projects_'+ i +'.html', 'builder/components/projects_' +i+'.html', function(){
-        console.log('done - projects_ '+ i +'.html');
+// for(var i = 1; i <= 9 ;i++){
+//     download('https://assemblyline.in/builder/components/projects_'+ i +'.html', 'builder/components/projects_' +i+'.html', function(){
+//         console.log('done - projects_ '+ i +'.html');
+//     });
+// }
+for(var i = 1; i <= 28 ;i++){
+    download('https://assemblyline.in/img/works/work'+ i +'.jpg', 'img/works/work' +i+'.jpg', function(){
+        console.log('done - work '+ i +'.jpg');
     });
 }
