@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/NeoHoang/test1#readme",
   "dependencies": {
-    "jquery": "^3.0.0"
+    "jquery": "^3.0.0",
+    "request": "^2.72.0"
   }
 }

@@ -35,11 +35,32 @@ var download = function(uri, filename, callback){
 
 // get footer_ templates
 
-for(var i = 1; i <= 12 ;i++){
-    download('https://assemblyline.in/builder/components/footer_'+ i +'.html', 'builder/components/footer_' +i+'.html', function(){
-        console.log('done - Footer '+ i +'.html');
+// for(var i = 1; i <= 12 ;i++){
+//     download('https://assemblyline.in/builder/components/footer_'+ i +'.html', 'builder/components/footer_' +i+'.html', function(){
+//         console.log('done - Footer '+ i +'.html');
+//     });
+// }
+
+// get contact_ templates
+
+// for(var i = 1; i <= 9 ;i++){
+//     download('https://assemblyline.in/builder/components/Contact_'+ i +'.html', 'builder/components/Contact_' +i+'.html', function(){
+//         console.log('done - Contact_ '+ i +'.html');
+//     });
+// }
+
+// get contents_ templates
+
+// for(var i = 1; i <= 9 ;i++){
+//     download('https://assemblyline.in/builder/components/contents_'+ i +'.html', 'builder/components/contents_' +i+'.html', function(){
+//         console.log('done - contents_ '+ i +'.html');
+//     });
+// }
+
+// get projects_ templates
+
+for(var i = 1; i <= 9 ;i++){
+    download('https://assemblyline.in/builder/components/projects_'+ i +'.html', 'builder/components/projects_' +i+'.html', function(){
+        console.log('done - projects_ '+ i +'.html');
     });
 }
-
-
-
