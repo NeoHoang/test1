@@ -64,8 +64,13 @@ var download = function(uri, filename, callback){
 //         console.log('done - projects_ '+ i +'.html');
 //     });
 // }
-for(var i = 1; i <= 28 ;i++){
-    download('https://assemblyline.in/img/works/work'+ i +'.jpg', 'img/works/work' +i+'.jpg', function(){
-        console.log('done - work '+ i +'.jpg');
+// for(var i = 1; i <= 28 ;i++){
+//     download('https://assemblyline.in/img/works/work'+ i +'.jpg', 'img/works/work' +i+'.jpg', function(){
+//         console.log('done - work '+ i +'.jpg');
+//     });
+// }
+for(var i = 10; i <= 100 ;i++){
+    download('https://assemblyline.in/img/works/'+ i +'.jpg', 'img/works/' +i+'.jpg', function(){
+        console.log('done - work 0'+ i +'.jpg');
     });
 }
