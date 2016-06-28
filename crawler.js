@@ -99,8 +99,13 @@ var download = function(uri, filename, callback){
 //     });
 // }
 
+// for (var i = 1; i <= 30; i++) {
+//     download('https://assemblyline.in/img/team' + i + '.png', 'img/team' + i + '.png', ()=> {
+//         console.log('done - Team img ' + i + '.png');
+//     });
+// }
 for (var i = 1; i <= 30; i++) {
-    download('https://assemblyline.in/img/team' + i + '.png', 'img/team' + i + '.png', ()=> {
-        console.log('done - Team img ' + i + '.png');
+    download('https://assemblyline.in/img/t' + i + '.jpg', 'img/t' + i + '.jpg', ()=> {
+        console.log('done - t img ' + i + '.jpg');
     });
 }
