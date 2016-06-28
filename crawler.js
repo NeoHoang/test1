@@ -51,11 +51,11 @@ var download = function(uri, filename, callback){
 
 // get contents_ templates
 
-for(var i = 1; i <= 100 ;i++){
-    download('https://assemblyline.in/builder/components/contents_'+ i +'.html', 'builder/components/contents_' +i+'.html', function(){
-        console.log('done - contents_ '+ i +'.html');
-    });
-}
+// for(var i = 1; i <= 100 ;i++){
+//     download('https://assemblyline.in/builder/components/contents_'+ i +'.html', 'builder/components/contents_' +i+'.html', function(){
+//         console.log('done - contents_ '+ i +'.html');
+//     });
+// }
 
 // get projects_ templates
 
@@ -85,8 +85,16 @@ for(var i = 1; i <= 100 ;i++){
 
 // get navigation_ templates
 
-for(var i = 1; i <= 200 ;i++){
-    download('https://assemblyline.in/builder/components/navigation_'+ i +'.html', 'builder/components/navigation_' +i+'.html', ()=>{
-        console.log('done - navigation_ '+ i +'.html');
+// for(var i = 1; i <= 200 ;i++){
+//     download('https://assemblyline.in/builder/components/navigation_'+ i +'.html', 'builder/components/navigation_' +i+'.html', ()=>{
+//         console.log('done - navigation_ '+ i +'.html');
+//     });
+// }
+
+// get Team_ templates
+
+for(var i = 1; i <= 20 ;i++){
+    download('https://assemblyline.in/builder/components/Team_'+ i +'.html', 'builder/components/Team_' +i+'.html', ()=>{
+        console.log('done - Team_ '+ i +'.html');
     });
 }
