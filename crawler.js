@@ -104,8 +104,20 @@ var download = function(uri, filename, callback){
 //         console.log('done - Team img ' + i + '.png');
 //     });
 // }
-for (var i = 1; i <= 30; i++) {
-    download('https://assemblyline.in/img/t' + i + '.jpg', 'img/t' + i + '.jpg', ()=> {
-        console.log('done - t img ' + i + '.jpg');
+// for (var i = 1; i <= 30; i++) {
+//     download('https://assemblyline.in/img/t' + i + '.jpg', 'img/t' + i + '.jpg', ()=> {
+//         console.log('done - t img ' + i + '.jpg');
+//     });
+// }
+
+// for (var i = 1; i <= 50; i++) {
+//     download('https://assemblyline.in/img/shop/p' + i + '.png', 'img/shop/p' + i + '.png', ()=> {
+//         console.log('done - shop img ' + i + '.png');
+//     });
+// }
+
+for (var i = 1; i <= 10; i++) {
+    download('https://assemblyline.in/img/client/' + i + '.png', 'img/client/' + i + '.png', ()=> {
+        console.log('done - client img ' + i + '.png');
     });
 }
