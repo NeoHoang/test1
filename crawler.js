@@ -93,8 +93,14 @@ var download = function(uri, filename, callback){
 
 // get Team_ templates
 
-for(var i = 1; i <= 20 ;i++){
-    download('https://assemblyline.in/builder/components/Team_'+ i +'.html', 'builder/components/Team_' +i+'.html', ()=>{
-        console.log('done - Team_ '+ i +'.html');
+// for(var i = 1; i <= 20 ;i++){
+//     download('https://assemblyline.in/builder/components/Team_'+ i +'.html', 'builder/components/Team_' +i+'.html', ()=>{
+//         console.log('done - Team_ '+ i +'.html');
+//     });
+// }
+
+for (var i = 1; i <= 30; i++) {
+    download('https://assemblyline.in/img/team' + i + '.png', 'img/team' + i + '.png', ()=> {
+        console.log('done - Team img ' + i + '.png');
     });
 }
