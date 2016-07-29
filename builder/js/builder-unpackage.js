@@ -1,30 +1,28 @@
-function hideme(e) {
-}
+function hideme(e){}
 function breakcreator(e) {
     if (window.getSelection) {
         e.stopPropagation();
         var t = window.getSelection(), a = t.getRangeAt(0), n = document.createElement("br");
-        return a.deleteContents(), a.insertNode(n), a.setStartAfter(n), a.setEndAfter(n), a.collapse(!1), t.removeAllRanges(), t.addRange(a), !1
+        return a.deleteContents(), a.insertNode(n), a.setStartAfter(n), a.setEndAfter(n), a.collapse(false), t.removeAllRanges(), t.addRange(a), false
     }
-    return !0
+    return true
 }
 function init_load() {
     loadMap(), init_slideShow(), drophoverMenu(), init_parallax(), init_lightBox(), innerSortable(), init_masonry(), validateForm()
 }
 function init_lightBox() {
-    $(".open_lightbox").length > 0 && $(".open_lightbox").lightGallery(
-        {
-            hash: !1, preload: 0, download: !1
-        }
-    )
+    $(".open_lightbox").length > 0 && $(".open_lightbox").lightGallery({hash: false, preload: 0, download: false})
 }
 function init_insta(e) {
     e ? instaElement = e : instaElement = $(".instafeed"), instaElement.each(function () {
             $(this).empty();
-            var e = $(this).attr("data-insta-username"), t = $(this).attr("data-insta-wrapper"), a = $(this).attr("data-insta-length");
-            $(this).spectragram("getUserFeed",
-                {
-                    query: e, max: a, wrapEachWith: t
+            var e = $(this).attr("data-insta-username"),
+                t = $(this).attr("data-insta-wrapper"),
+                a = $(this).attr("data-insta-length");
+            $(this).spectragram("getUserFeed",{
+                    query: e,
+                    max: a,
+                    wrapEachWith: t
                 }
             )
         }
@@ -188,19 +186,34 @@ function init_masonry() {
     )
 }
 function saveProject() {
-    $("#htmlsanit").append($(".omg_browser").clone().html()), $("#htmlsanit .omg_browser .omg_page").each(function () {
-        $("[contenteditable]").removeAttr("contenteditable"), $("#htmlsanit .omg_page .ui-sortable-handle[style]").each(function () {
-                var e = $(this).attr("style");
-                e = e.replace("position: relative;opacity: 1;", ""), "" == e ? $(this).removeAttr("style") : $(this).attr("style", e), $(this).removeClass("ui-sortable-handle")
-            }
-        ), $("#htmlsanit .ui-sortable").removeClass("ui-sortable"), $("#htmlsanit .ui-sortable-handle").removeClass("ui-sortable-handle")
-        }
-    ), $("#htmlsanit").removeClass("omg-text"), $("#htmlsanit .parallax-content").css("background-position", ""), $("#htmlsanit .instafeed").empty(), $("#htmlsanit .slideshow").each(function () {
-            $(this).removeClass("slick-slider"), $(this).removeClass("slick-initialized");
+    $("#htmlsanit").append($(".omg_browser").clone().html());
+
+    $("#htmlsanit .omg_browser .omg_page").each(function () {
+        $("[contenteditable]").removeAttr("contenteditable");
+        $("#htmlsanit .omg_page .ui-sortable-handle[style]").each(function () {
+                    var e = $(this).attr("style");
+                    e = e.replace("position: relative;opacity: 1;", "");
+                    "" == e ? $(this).removeAttr("style") : $(this).attr("style", e);
+                    $(this).removeClass("ui-sortable-handle")
+                }
+            );
+        $("#htmlsanit .ui-sortable").removeClass("ui-sortable");
+        $("#htmlsanit .ui-sortable-handle").removeClass("ui-sortable-handle");
+    });
+
+    $("#htmlsanit").removeClass("omg-text");
+    $("#htmlsanit .parallax-content").css("background-position", "");
+    $("#htmlsanit .instafeed").empty();
+    $("#htmlsanit .slideshow").each(function () {
+            $(this).removeClass("slick-slider");
+            $(this).removeClass("slick-initialized");
             var e = $(this).find(".slide").removeAttr("style").removeAttr("data-slick-index").removeAttr("class").addClass("slide").removeAttr("aria-hidden");
-            $(this).empty(), $(this).append(e)
+            $(this).empty();
+            $(this).append(e);
         }
-    ), $("#htmlsanit .masonry-container").masonry().masonry("destroy");
+    );
+    $("#htmlsanit .masonry-container").masonry().masonry("destroy");
+
     var e, t = $("#htmlsanit").html(), a = window.location.href;
     if (a.indexOf(".php") > -1 || a.indexOf(".html") > -1)var e = a.substring(0, a.lastIndexOf("/"));
     else e = a;
@@ -226,24 +239,39 @@ function demoMenu() {
         }
     )
 }
-function validateForm() {
-}
-function openMenu(e) {
-    close_sidebar("", "all"), $(e).addClass("visible")
-}
-document.name = "Stallion", document.projectName = "Assembly", document.title = document.projectName;
-var dropframe = $(".omg_page.active_page"), editor, currentEditForm, media_setup_for, ele, background_image, animateClasses = "bounce flash pulse rubberBand shake swing tada wobble bounceIn bounceInDown bounceInLeft bounceInRight bounceInUp bounceOut bounceOutDown bounceOutLeft bounceOutRight bounceOutUp fadeIn fadeInDown fadeInDownBig fadeInLeft fadeInLeftBig fadeInRight fadeInRightBig fadeInUp fadeInUpBig fadeOut fadeOutDown fadeOutDownBig fadeOutLeft fadeOutLeftBig fadeOutRight fadeOutRightBig fadeOutUp fadeOutUpBig flip flipInX flipInY flipOutX flipOutY lightSpeedIn lightSpeedOut rotateIn rotateInDownLeft rotateInDownRight rotateInUpLeft rotateInUpRight rotateOut rotateOutDownLeft rotateOutDownRight rotateOutUpLeft rotateOutUpRight hinge rollIn rollOut zoomIn zoomInDown zoomInLeft zoomInRight zoomInUp zoomOut zoomOutDown zoomOutLeft zoomOutRight zoomOutUp", $textTypes = " .omg_page a, .omg_page .icon,.omg_page h1 , .omg_page h2 , .omg_page h3 ,.omg_page  h4 , .omg_page h5 ,  .omg_page h6 , .omg_page span , .omg_page p , .omg_page .hero_text, .omg_page .hero-subtitle, .omg_page .hero_para, .omg_page .hero-title , .omg-text", set_contentEditable = !0, targetAnchor, fake_var, parallaxclass, sortBegin = !1, ex_fontlist = ["Montserrat"], total_unsplash_img = 1034, windowW = $(window).width() + 150, windowH = $(window).height() + 150, image_resolution_for_unsplash = windowW + "/" + windowH, no_img_page = 20, img_remain = 0, bg_prepend = $("#bg_prepend"), currentEditMap;
-Pace.on("done", function () {
-        $(".add_component").trigger("click")
-    }
-), $(document).on("keydown", "[contenteditable=true]", function (e) {
-        return 13 === e.keyCode ? breakcreator(e) ? !0 : !1 : void 0
-    }
-), $(".property_sidebar").draggable(
-    {
-        axis: "x", handle: ".drag-heading", containment: "parent", cursor: "move"
-    }
-), $(document).on("blur keyup paste input", "[contenteditable]", function (e) {
+function validateForm() {}
+function openMenu(e) {close_sidebar("", "all"), $(e).addClass("visible")}
+document.name = "Stallion",
+document.projectName = "WizZ",
+document.title = document.projectName;
+
+var dropframe = $(".omg_page.active_page"),
+    editor,
+    currentEditForm,
+    media_setup_for,
+    ele,
+    background_image,
+    animateClasses = "bounce flash pulse rubberBand shake swing tada wobble bounceIn bounceInDown bounceInLeft bounceInRight bounceInUp bounceOut bounceOutDown bounceOutLeft bounceOutRight bounceOutUp fadeIn fadeInDown fadeInDownBig fadeInLeft fadeInLeftBig fadeInRight fadeInRightBig fadeInUp fadeInUpBig fadeOut fadeOutDown fadeOutDownBig fadeOutLeft fadeOutLeftBig fadeOutRight fadeOutRightBig fadeOutUp fadeOutUpBig flip flipInX flipInY flipOutX flipOutY lightSpeedIn lightSpeedOut rotateIn rotateInDownLeft rotateInDownRight rotateInUpLeft rotateInUpRight rotateOut rotateOutDownLeft rotateOutDownRight rotateOutUpLeft rotateOutUpRight hinge rollIn rollOut zoomIn zoomInDown zoomInLeft zoomInRight zoomInUp zoomOut zoomOutDown zoomOutLeft zoomOutRight zoomOutUp",
+    $textTypes = " .omg_page a, .omg_page .icon,.omg_page h1 , .omg_page h2 , .omg_page h3 ,.omg_page  h4 , .omg_page h5 ,  .omg_page h6 , .omg_page span , .omg_page p , .omg_page .hero_text, .omg_page .hero-subtitle, .omg_page .hero_para, .omg_page .hero-title , .omg-text",
+    set_contentEditable = true,
+    targetAnchor,
+    fake_var,
+    parallaxclass,
+    sortBegin = false,
+    ex_fontlist = ["Montserrat"],
+    total_unsplash_img = 1034,
+    windowW = $(window).width() + 150,
+    windowH = $(window).height() + 150,
+    image_resolution_for_unsplash = windowW + "/" + windowH,
+    no_img_page = 20,
+    img_remain = 0,
+    bg_prepend = $("#bg_prepend"),
+    currentEditMap;
+
+Pace.on("done", function () {$(".add_component").trigger("click")}),
+    $(document).on("keydown", "[contenteditable=true]", function (e) {return 13 === e.keyCode ? breakcreator(e) ? !0 : !1 : void 0}),
+    $(".property_sidebar").draggable({axis: "x", handle: ".drag-heading", containment: "parent", cursor: "move"}),
+    $(document).on("blur keyup paste input", "[contenteditable]", function (e) {
         if ("paste" == e.type) {
             e.preventDefault();
             var t = (e.originalEvent || e).clipboardData.getData("text/plain").replace(/\n/g, "<br>");
@@ -270,9 +298,7 @@ $(document).on("click", ".widget_box.instacontrol a", function (e) {
 var Components_list;
 $.getJSON("builder/components/components.json", function (e) {
         Components_list = e.components;
-        for (var t in e.components)for (niceKey = t.toLowerCase().replace(" ", "_"), $('<li><a href="#" data-menu-item="omg_component_' + niceKey + '">' + t + "</a></li>").appendTo("#Menufilter"), x = 0;
-                                        x < e.components[t].length;
-                                        x++)newItem = $('<div class="omg_item omg_component_' + niceKey + ' " data-url="' + e.components[t][x].url + '" data-componentname="' + e.components[t][x].name + '"><span>' + e.components[t][x].name + '</span><img src="' + e.components[t][x].thumbnail + '"></div>'), newItem.appendTo("#componentdrawer")
+        for (var t in e.components)for (niceKey = t.toLowerCase().replace(" ", "_"), $('<li><a href="#" data-menu-item="omg_component_' + niceKey + '">' + t + "</a></li>").appendTo("#Menufilter"), x = 0;x < e.components[t].length;x++) newItem = $('<div class="omg_item omg_component_' + niceKey + ' " data-url="' + e.components[t][x].url + '" data-componentname="' + e.components[t][x].name + '"><span>' + e.components[t][x].name + '</span><img src="' + e.components[t][x].thumbnail + '"></div>'), newItem.appendTo("#componentdrawer")
     }
 ).error(function () {
         console.error("Please double check the formatting of your JSON file."), console.log("error JSON formatting invalid")
@@ -305,13 +331,13 @@ $.getJSON("builder/components/components.json", function (e) {
     }
 );
 var newIcon, cur_Icon;
-$("#icons_load").load("builder/icons", function () {
-    }
-), $(document).on("click", "#showall", function (e) {
-        e.preventDefault(), $("#icons li").removeClass("hidden")
-    }
-), $(document).on("keydown", "#searchicon", function (e) {
-        console.log("happend"), $("#icons li").addClass("hidden"), console.log($("#icons li[data-tags*='" + $(this).val() + "']")), $("#icons li[data-tags*='" + $(this).val() + "']").removeClass("hidden")
+$("#icons_load").load("builder/icons", function () {}),
+$(document).on("click", "#showall", function (e) {e.preventDefault(), $("#icons li").removeClass("hidden")}),
+$(document).on("keydown", "#searchicon", function (e) {
+        console.log("happend"),
+        $("#icons li").addClass("hidden"),
+        console.log($("#icons li[data-tags*='" + $(this).val() + "']")),
+        $("#icons li[data-tags*='" + $(this).val() + "']").removeClass("hidden")
     }
 ), $(document).on("click", "#icons li", function (e) {
         e.preventDefault(), newIcon = $(this).attr("class"), $(".selected_icon").removeClass("selected_icon"), $(this).addClass("selected_icon")
@@ -361,8 +387,7 @@ $(document).on("click", "#Menufilter li a", function (e) {
     }
 );
 var txt_available_options = ["background-color", "font-size", "letter-spacing", "font-style", "color", "text-transform", "text-align", "text-decoration", "font-weight"], xr, undo = [], temp, newK = $textTypes.replace(/ ,/g, "[style],");
-$(document).on("keydown", function (e) {
-    }
+    $(document).on("keydown", function (e) { }
 );
 var undo_dump = "", cur_text_element2, cur_text_element = null, edf;
 $(document).on("change", ".property", function () {
@@ -515,11 +540,13 @@ $(document).on("click", "#addpage", function (e) {
         cur_hero_layout.find(".h-align").removeClass("v-middle v-top v-bottom h-left h-right h-center").addClass("h-align").addClass(t)
     }
 );
-var firstTimeUnsplash = !0, firstlocalmedia = !0;
+var firstTimeUnsplash = true,
+    firstlocalmedia = true;
 $('a[href="#medialibrary"]').on("shown.bs.tab", function (e) {
-        1 == firstlocalmedia && ($("#medialibrary").load("local_media.php"), firstlocalmedia = !1)
+        true == firstlocalmedia && ($("#medialibrary").load("local_media.php"), firstlocalmedia = false)
     }
-), $("#BgImage").on("show.bs.modal", function (e) {
+),
+    $("#BgImage").on("show.bs.modal", function (e) {
         if (1 == firstTimeUnsplash) {
             for (i = total_unsplash_img;
                  i > total_unsplash_img - no_img_page;
@@ -546,7 +573,10 @@ var cur_img, dummy_ele;
 $(document).on("click", "#updateImg", function (e) {
         e.preventDefault();
         var t = $(this).attr("imgurl");
-        "bg" == media_setup_for && (dummy_ele = background_image, background_image.css("background-image", "url('" + t + "')")), "img" == media_setup_for && cur_img.attr("src", t), toastr.success("right click on image for more options", "image updated."), $("#BgImage").modal("hide")
+            "bg" == media_setup_for && (dummy_ele = background_image, background_image.css("background-image", "url('" + t + "')")),
+            "img" == media_setup_for && cur_img.attr("src", t),
+            toastr.success("right click on image for more options", "image updated."),
+            $("#BgImage").modal("hide")
     }
 ), $(document).on("click", ".undoImg", function (e) {
         e.preventDefault(), $(".selected_img_border").removeClass("selected_img_border")
